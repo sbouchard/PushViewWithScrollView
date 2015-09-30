@@ -106,4 +106,14 @@
 }
 
 
+-(void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    if(scrollView.contentOffset.y >= 100 && scrollView.contentOffset.y < self.topView.frame.size.height){
+        [scrollView setContentOffset:CGPointMake(0, self.topView.frame.size.height) animated:YES];
+        
+    }else{
+        [scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+    }
+}
+
+
 @end
