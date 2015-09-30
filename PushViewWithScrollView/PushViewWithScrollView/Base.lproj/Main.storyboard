@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="m3u-GG-ePI">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="RHz-tR-efd">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKH-Yx-tVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="m3u-GG-ePI" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cOe-Uf-qER"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xc3-uc-fKQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ALa-g2-0el">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NeU-18-ToN">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psW-gb-yiG">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osf-gH-sjP">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hqdefault" translatesAutoresizingMaskIntoConstraints="NO" id="vLR-B5-epK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="vLR-B5-epK" firstAttribute="top" secondItem="osf-gH-sjP" secondAttribute="top" id="4wu-a5-Ne2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vLR-B5-epK" secondAttribute="trailing" id="OOk-Ze-wE9"/>
+                                                    <constraint firstAttribute="height" constant="200" id="jES-v9-w7q"/>
+                                                    <constraint firstAttribute="bottom" secondItem="vLR-B5-epK" secondAttribute="bottom" id="keM-D9-uww"/>
+                                                    <constraint firstItem="vLR-B5-epK" firstAttribute="leading" secondItem="osf-gH-sjP" secondAttribute="leading" id="obf-Zn-tY0"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="osf-gH-sjP" secondAttribute="trailing" id="lEZ-ZQ-Eg4"/>
+                                            <constraint firstItem="osf-gH-sjP" firstAttribute="leading" secondItem="psW-gb-yiG" secondAttribute="leading" id="o67-qT-u3Y"/>
+                                            <constraint firstItem="osf-gH-sjP" firstAttribute="top" secondItem="psW-gb-yiG" secondAttribute="top" id="xWL-Go-s5K"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtv-HZ-pY0">
+                                        <rect key="frame" x="0.0" y="206" width="320" height="542"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3ag-v1-seM">
+                                                <rect key="frame" x="80" y="8" width="160" height="29"/>
+                                                <color key="backgroundColor" red="0.49803921569999998" green="0.7843137255" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28" id="9sO-3e-8bv"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="Yahoo"/>
+                                                    <segment title="CNN"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="segmentedControlIndexChanged:" destination="m3u-GG-ePI" eventType="valueChanged" id="qmW-Uh-A3k"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xT-Oq-cQL">
+                                                <rect key="frame" x="0.0" y="46" width="320" height="496"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="m3u-GG-ePI" id="wgi-ts-VAZ"/>
+                                                </connections>
+                                            </webView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="3ag-v1-seM" firstAttribute="leading" secondItem="xtv-HZ-pY0" secondAttribute="leading" constant="80" id="70e-4c-7PM"/>
+                                            <constraint firstAttribute="trailing" secondItem="5xT-Oq-cQL" secondAttribute="trailing" id="8Ud-UX-C26"/>
+                                            <constraint firstItem="5xT-Oq-cQL" firstAttribute="leading" secondItem="xtv-HZ-pY0" secondAttribute="leading" id="Fgu-wp-1sr"/>
+                                            <constraint firstItem="5xT-Oq-cQL" firstAttribute="top" secondItem="3ag-v1-seM" secondAttribute="bottom" constant="10" id="G2J-cX-d7N"/>
+                                            <constraint firstItem="3ag-v1-seM" firstAttribute="top" secondItem="xtv-HZ-pY0" secondAttribute="top" constant="8" id="XzL-b8-tkq"/>
+                                            <constraint firstAttribute="trailing" secondItem="3ag-v1-seM" secondAttribute="trailing" constant="80" id="mY6-nv-0Gi"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="psW-gb-yiG" secondAttribute="bottom" id="46J-7T-hSr"/>
+                                    <constraint firstItem="psW-gb-yiG" firstAttribute="centerX" secondItem="NeU-18-ToN" secondAttribute="centerX" id="Img-5i-tM2"/>
+                                    <constraint firstAttribute="trailing" secondItem="psW-gb-yiG" secondAttribute="trailing" id="KIM-p5-QMa"/>
+                                    <constraint firstItem="xtv-HZ-pY0" firstAttribute="top" secondItem="osf-gH-sjP" secondAttribute="bottom" constant="6" id="a0G-sV-sHA"/>
+                                    <constraint firstItem="psW-gb-yiG" firstAttribute="top" secondItem="NeU-18-ToN" secondAttribute="top" id="bLj-cB-oF8"/>
+                                    <constraint firstItem="psW-gb-yiG" firstAttribute="leading" secondItem="NeU-18-ToN" secondAttribute="leading" id="gpb-Jz-CvL"/>
+                                    <constraint firstItem="psW-gb-yiG" firstAttribute="centerY" secondItem="NeU-18-ToN" secondAttribute="centerY" id="k6S-LE-ccS"/>
+                                    <constraint firstAttribute="trailing" secondItem="xtv-HZ-pY0" secondAttribute="trailing" id="qGa-ab-Ywc"/>
+                                    <constraint firstItem="xtv-HZ-pY0" firstAttribute="leading" secondItem="NeU-18-ToN" secondAttribute="leading" id="wPJ-Eh-0h1"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="m3u-GG-ePI" id="UvZ-VU-KNC"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NeU-18-ToN" firstAttribute="leading" secondItem="ALa-g2-0el" secondAttribute="leading" id="CAx-KK-prY"/>
+                            <constraint firstAttribute="trailing" secondItem="NeU-18-ToN" secondAttribute="trailing" id="DIW-YP-iUg"/>
+                            <constraint firstItem="Xc3-uc-fKQ" firstAttribute="top" secondItem="5xT-Oq-cQL" secondAttribute="bottom" constant="-200" id="Mm3-M0-AUu"/>
+                            <constraint firstItem="NeU-18-ToN" firstAttribute="top" secondItem="cOe-Uf-qER" secondAttribute="bottom" id="jX8-Mi-Cou"/>
+                            <constraint firstItem="Xc3-uc-fKQ" firstAttribute="top" secondItem="xtv-HZ-pY0" secondAttribute="bottom" constant="-200" id="xmm-eH-szg"/>
+                            <constraint firstItem="Xc3-uc-fKQ" firstAttribute="top" secondItem="NeU-18-ToN" secondAttribute="bottom" id="ytl-4W-r1N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="NeU-18-ToN" id="6FD-KZ-kOQ"/>
+                        <outlet property="segmentedControl" destination="3ag-v1-seM" id="r57-bC-9pN"/>
+                        <outlet property="topView" destination="osf-gH-sjP" id="TVW-HY-YEQ"/>
+                        <outlet property="webView" destination="5xT-Oq-cQL" id="HRy-5J-N47"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="226.13333333333333" y="195.96000000000001"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hqdefault" width="480" height="360"/>
+    </resources>
+</document>
